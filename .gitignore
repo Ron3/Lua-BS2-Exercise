@@ -9,8 +9,8 @@ Assembly-CSharp.csproj
 
 # 忽略文件夾
 obj
-# Library
-# ProjectSettings
+Library
+ProjectSettings
 Temp
 Assets/Demigiant
 
