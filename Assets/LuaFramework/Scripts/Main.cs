@@ -8,6 +8,7 @@ namespace LuaFramework {
     public class Main : MonoBehaviour {
 
         void Start() {
+            Debug.Log("Main Start ....");
             AppFacade.Instance.StartUp();   //启动游戏
         }
     }
