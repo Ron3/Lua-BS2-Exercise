@@ -17,11 +17,14 @@ public class ScriptsFromFile : MonoBehaviour
 #else
         Application.RegisterLogCallback(Log);
 #endif         
-        lua = new LuaState();                
-        lua.Start();        
+        lua = new LuaState();
+        lua.Start();
+        
         //如果移动了ToLua目录，自己手动修复吧，只是例子就不做配置了
-        string fullPath = Application.dataPath + "\\ToLua/Examples/02_ScriptsFromFile";
-        lua.AddSearchPath(fullPath);        
+        string fullPath = Application.dataPath + "/LuaFramework/ToLua/Examples/02_ScriptsFromFile";
+        Debug.Log("fullPath ==> " + fullPath);
+        
+        lua.AddSearchPath(fullPath);
     }
 
     void Log(string msg, string stackTrace, LogType type)
@@ -37,12 +40,12 @@ public class ScriptsFromFile : MonoBehaviour
         if (GUI.Button(new Rect(50, 50, 120, 45), "DoFile"))
         {
             strLog = "";
-            lua.DoFile("ScriptsFromFile.lua");                        
+            lua.DoFile("ScriptsFromFile.lua");
         }
         else if (GUI.Button(new Rect(50, 150, 120, 45), "Require"))
         {
-            strLog = "";            
-            lua.Require("ScriptsFromFile");            
+            strLog = "";
+            lua.Require("ScriptsFromFile");
         }
 
         lua.Collect();

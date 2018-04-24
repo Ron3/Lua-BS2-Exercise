@@ -15,4 +15,5 @@ Temp
 Library/
 aaa
 Assets/Demigiant
-
+Assets/StreamingAssets
+luaframework/lua
