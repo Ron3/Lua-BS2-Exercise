@@ -37,10 +37,11 @@ namespace LuaFramework {
             bool isExists = Directory.Exists(Util.DataPath) &&
               Directory.Exists(Util.DataPath + "lua/") && File.Exists(Util.DataPath + "files.txt");
             if (isExists || AppConst.DebugMode) {
+                Debug.Log("CheckExtractResource 11111");
                 StartCoroutine(OnUpdateResource());
                 return;   //文件已经解压过了，自己可添加检查文件列表逻辑
             }
-            StartCoroutine(OnExtractResource());    //启动释放协成 
+            StartCoroutine(OnExtractResource());    //启动释放协成
         }
 
         IEnumerator OnExtractResource() {
@@ -106,7 +107,7 @@ namespace LuaFramework {
             //释放完成，开始启动更新资源
             StartCoroutine(OnUpdateResource());
         }
-
+        
         /// <summary>
         /// 启动更新下载，这里只是个思路演示，此处可启动线程下载更新
         /// </summary>
@@ -236,8 +237,11 @@ namespace LuaFramework {
             LuaManager.DoFile("Logic/Network");      //加载网络
             NetManager.OnInit();                     //初始化网络
             Util.CallMethod("Game", "OnInitOK");     //初始化完成
-
             initialize = true;
+            return;
+            
+            
+            
 
             //类对象池测试
             var classObjPool = ObjPoolManager.CreatePool<TestObjectClass>(OnPoolGetElement, OnPoolPushElement);

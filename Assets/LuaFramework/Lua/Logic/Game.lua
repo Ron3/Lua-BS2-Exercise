@@ -30,7 +30,7 @@ function Game.InitViewPanels()
 	end
 end
 
---初始化完成，发送链接服务器信息--
+-- 初始化完成，发送链接服务器信息--
 function Game.OnInitOK()
     AppConst.SocketPort = 2012;
     AppConst.SocketAddress = "127.0.0.1";
@@ -53,14 +53,14 @@ function Game.OnInitOK()
         ctrl:Awake();
     end
        
-    logWarn('LuaFramework InitOK--->>>');
+    logWarn('LuaFramework InitOK 3333--->>>');
 end
 
 --测试协同--
 function Game.test_coroutine()    
-    logWarn("1111");
+    -- logWarn("1111");
     coroutine.wait(1);	
-    logWarn("2222");
+    -- logWarn("2222");
 	
     local www = WWW("http://bbs.ulua.org/readme.txt");
     coroutine.www(www);

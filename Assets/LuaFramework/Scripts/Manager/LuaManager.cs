@@ -6,11 +6,11 @@ namespace LuaFramework {
     public class LuaManager : Manager {
         private LuaState lua;
         private LuaLoader loader;
-        private LuaLooper loop = null;
+        private LuaLooper loop = null;      // 这个应该是协程相关的
 
         // Use this for initialization
         void Awake() {
-            loader = new LuaLoader();
+            loader = new LuaLoader();       // 加载lua代码等
             lua = new LuaState();
             this.OpenLibs();
             lua.LuaSetTop(0);
@@ -45,7 +45,7 @@ namespace LuaFramework {
 
         void StartMain() {
             lua.DoFile("Main.lua");
-
+            
             LuaFunction main = lua.GetFunction("Main");
             main.Call();
             main.Dispose();

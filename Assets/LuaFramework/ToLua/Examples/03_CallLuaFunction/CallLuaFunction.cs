@@ -25,6 +25,7 @@ public class CallLuaFunction : MonoBehaviour
 #else
         Application.RegisterLogCallback(ShowTips);
 #endif
+        // Debug.Log("delete LuaResLoader");
         new LuaResLoader();
         lua = new LuaState();
         lua.Start();

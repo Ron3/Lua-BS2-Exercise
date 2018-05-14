@@ -31,7 +31,7 @@ public class AccessingLuaVariables : MonoBehaviour
         new LuaResLoader();
         LuaState lua = new LuaState();
         lua.Start();
-        lua["Objs2Spawn"] = 5;
+        lua["Objs2Spawn"] = 5000;
         lua.DoString(script);
 
         //通过LuaState访问
@@ -67,7 +67,7 @@ public class AccessingLuaVariables : MonoBehaviour
         {
             Debugger.Log("varTable[{0}], is {1}", i, list[i]);
         }
-
+        
         table.Dispose();                        
         lua.CheckTop();
         lua.Dispose();

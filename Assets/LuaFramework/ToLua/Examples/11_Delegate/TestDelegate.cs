@@ -42,7 +42,7 @@ public class TestDelegate: MonoBehaviour
 
             function RemoveClick1(listener)
                 if listener.onClick then
-                    listener.onClick = listener.onClick - DoClick1      
+                    listener.onClick = listener.onClick - DoClick1
                 else
                     print('empty delegate')
                 end
