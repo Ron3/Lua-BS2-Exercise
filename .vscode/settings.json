@@ -3,6 +3,13 @@
     "files.exclude": {
     "**/.git": true,
     "**/.DS_Store" : true,
-    "**/*.meta" : true
+    "**/*.meta" : true,
+    "**/Plugins": true,
+    "**/ProjectSettings": true,
+    "**/Library": true,
+    "**/StreamingAssets": true,
+    "**/*.byte": true,
+    "**/*.manifest": true,
+    "**/*.unity3d": true,
     }
 }
